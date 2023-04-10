@@ -1,0 +1,2 @@
+# susmind
+Logical game
