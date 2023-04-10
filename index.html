@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>SUS-MIND</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-Ua-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="assets/orange.webp" />
+    <link rel="stylesheet" href="main.css">
+
+    <!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+
+    <main>
+        <article>
+            <div id="stars">
+
+            </div>
+            <header>
+                <h1 class="Blazing">SUS-MIND<span></span>
+                </h1>
+            </header>
+            <div class="start">
+                <p>Witaj...</p>
+            </div>
+            <div id="play" onclick="play()">Play</div>
+            <div class="help">
+                <span id="closehelp">[ zamknij ]</span>
+                <p>Gra SUS-mind polega na odgadnięciu kolorów każdej postaci.</p>
+                <p>Załóżmy, iż poprawna kombinacja postaci, którą należy odgadnąć jest następująca:</p>
+                <img src="pic/help1.png" alt="Poprawna kombinacja">
+                <p>Natomiast układ wprowadzony przez nas wygląda następująco:</p>
+                <img src="pic/help2.png" alt="Przykładowa kombinacja">
+                <p>Ikonki stanowiące podpowiedź pomagają ustalić właściwą kolejność barw:</p>
+                <img src="pic/help3.png" alt="Przykładowa kombinacja">
+            </div>
+            <div id="help">Reguły gry</div>
+            <div class="pre_board">
+                <canvas id="pre_game" width="1200" height="800"></canvas>
+            </div>
+            <div class="board">
+                <canvas id="game_canvas" width="1200" height="800"></canvas>
+                <div id="sustest">
+                    <img src="assets/black.webp" alt="foto">
+
+                </div>
+
+            </div>
+
+            <div class="comment">
+
+            </div>
+
+            <div class="controls">
+                <button onclick="suspic(1)" id="c1" class="btn"><img src="assets/red.webp" style="margin-left: -104%;margin-top: -60%;" width="120" height="150" alt="sus1" ></button>
+                <button onclick="suspic(2)" id="c2" class="btn"><img src="assets/blue.webp" style="margin-left: -104%;margin-top: -60%;" width="120" height="150" alt="sus2" ></button>
+                <button onclick="suspic(3)" id="c3" class="btn"><img src="assets/green.webp" style="margin-left: -104%;margin-top: -60%;" width="120" height="150" alt="sus3" ></button>
+                <button onclick="suspic(4)" id="c4" class="btn"><img src="assets/pink.webp" style="margin-left: -104%;margin-top: -60%;" width="120" height="150" alt="sus4" ></button>
+                <button onclick="suspic(5)" id="c5" class="btn"><img src="assets/orange.webp" style="margin-left: -104%;margin-top: -60%;" width="120" height="150" alt="sus5" ></button>
+                <button onclick="suspic(6)" id="c6" class="btn"><img src="assets/yellow.webp" style="margin-left: -104%;margin-top: -60%;" width="120" height="150" alt="sus6" ></button>
+                <button onclick="suspic(7)" id="c7" class="btn"><img src="assets/black.webp" style="margin-left: -104%;margin-top: -60%;" width="120" height="150" alt="sus7" ></button>
+                <button onclick="suspic(8)" id="c8" class="btn"><img src="assets/white.webp" style="margin-left: -104%;margin-top: -60%;" width="120" height="150" alt="sus8" ></button>
+                <button id="delete" style="margin-left: 7%;">POPRAW</button>
+            </div>
+            <div id="sus">
+
+            </div>
+        </article>
+    </main>
+    <div class="background">
+
+    </div>
+    </script>
+    <script>
+        (function() {
+            const starContainer = document.querySelector("#stars");
+
+            for (let i = 0; i < 100; i++) {
+                const randomNumber = Math.random();
+                const translateX = randomNumber * 100;
+                const delay = i * 1 / 50;
+                const starElement = document.createElement("span");
+                starElement.classList.add("star");
+                starElement.style.left = `${translateX}%`;
+                starElement.style.animationDelay = `${delay}s`;
+                starContainer.appendChild(starElement);
+            }
+        })()
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
